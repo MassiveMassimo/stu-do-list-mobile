@@ -1,7 +1,7 @@
 # Proyek Akhir Semester PBP
 
 
-![Wow a website](/static/favicon-wordmark.svg)
+![Wow a website](/assets/images/favicon-wordmark.svg)
 
 &nbsp;
 
@@ -111,9 +111,9 @@ Stu-Do-List kami ciptakan dengan harapan dapat membantu teman-teman yang mungkin
 
 <p>Untuk memvisualisasikan user persona lebih baik, kami menyediakan infografis dari kedua role di atas. Berikut adalah user persona untuk student mentor/aide:</p>
 
-![Persona1](/static/img/Student-Mentor.png)
+![Persona1](/assets/images/Student-Mentor.png)
 
 Berikut adalah user persona untuk student mentee:
 
-![Persona2](/static/img/Student-Normal.png
-)
+![Persona2](/assets/images/Student-Normal.png)
+
