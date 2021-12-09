@@ -71,10 +71,10 @@ Stu-Do-List kami ciptakan dengan harapan dapat membantu teman-teman yang mungkin
 <h3>About Us</h3>
 <p>Halaman ini berisikan biodata anggota kelompok B06. Biodata yang dicantumkan berupa nama, foto, pengenalan singkat, serta role anggota dalam pembuatan website ini.</p>
 
-<h3>Video playlist</h3>
+<h3>Video Playlist</h3>
 <p>Pada halaman ini, pengguna dapat memasukkan kumpulan video yang ia miliki agar dapat dilihat oleh pengguna lainnya. Stu-Do-List menghadirkan fitur ini yang berguna untuk pengguna yang ingin membagikan video yang dapat dijadikan sumber belajar atau sekadar membagikan lagu yang direkomendasikan untuk menemani pengguna lainnya saat belajar. </p>
 
-<h3>Schedule kuliah</h3>
+<h3>Schedule Kuliah</h3>
 <p>Pada halaman ini, pengguna dapat mendaftarkan jadwal kuliah pada profil Stu-Do-List mereka sesuai dengan mata kuliah yang diambil. Pengguna juga dapat melihat informasi-informasi umum mengenai mata kuliah yang diambil berupa nama dosen, kontak dosen, dan jumlah SKS.</p>
 
 &nbsp;
@@ -117,3 +117,18 @@ Berikut adalah user persona untuk student mentee:
 
 ![Persona2](/assets/images/Student-Normal.png)
 
+&nbsp;
+
+## 🖥️ Pembagian Tugas
+
+<p> Berikut ini merupakan pembagian tugas kelompok kami: </p>
+
+| Nama  | Pembagian Modul |
+|---|---|
+| Chalika Vanya Resya  | Video Playlist  |
+| Dimas Ilham Danesamarruf  | Agenda  |
+| Fikriaffan Fadlil  | Notes  |
+| Jenny  | Schedule Kuliah  |
+| Muhammad Hannan Massimo Madjid  | Ask a Mentor  |
+| Rafa Aurielle Adinda Diorra  | Study Communities  |
+| Zachra Shafira Ramadhanty  | Jadwal Belajar Bareng  |
