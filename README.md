@@ -121,35 +121,12 @@ Berikut adalah user persona untuk student mentee:
 
 ## 🖥️ Pembagian Tugas
 
-<tr>
-  <th> Nama </th>
-  <th> Pembagian Modul </th>
-</tr>
-<tr> 
-  <td> Chalika Vanya Resya </td>
-  <td> Video playlist </td>
-</tr>
-<tr> 
-  <td> Dimas Ilham Danesamarruf </td>
-  <td> Agenda </td>
-</tr>
-<tr> 
-  <td> Fikriaffan Fadlil </td>
-  <td> Notes </td>
-</tr>
-<tr> 
-  <td> Jenny </td>
-  <td> Schedule kuliah </td>
-</tr>
-<tr> 
-  <td> Muhammad Hannan Massimo Madjid </td>
-  <td> Ask a mentor </td>
-</tr>
-<tr> 
-  <td> Rafa Aurielle Adinda Diorra </td>
-  <td> Study Communities </td>
-</tr>
-<tr> 
-  <td> Zachra Shafira Ramadhanty </td>
-  <td> Jadwal Belajar Bareng </td>
-</tr>
+| Nama  | Pembagian Modul |
+|:-:|:-:|
+| Chalika Vanya Resya  | Video playlist  |
+| Dimas Ilham Danesamarruf  | Agenda  |
+| Fikriaffan Fadlil  | Notes  |
+| Jenny  | Schedule kuliah  |
+| Muhammad Hannan Massimo Madjid  | Ask a mentor  |
+| Rafa Aurielle Adinda Diorra  | Study Communities  |
+| Zachra Shafira Ramadhanty  | Jadwal Belajar Bareng  |
