@@ -121,8 +121,10 @@ Berikut adalah user persona untuk student mentee:
 
 ## 🖥️ Pembagian Tugas
 
+<p> Berikut ini merupakan pembagian tugas kelompok kami: </p>
+
 | Nama  | Pembagian Modul |
-|:-:|:-:|
+|---|---|
 | Chalika Vanya Resya  | Video playlist  |
 | Dimas Ilham Danesamarruf  | Agenda  |
 | Fikriaffan Fadlil  | Notes  |
