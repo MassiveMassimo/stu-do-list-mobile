@@ -33,7 +33,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
           ),
           DrawerListTile(
             iconData: Icons.question_answer,
-            title: "Ask A Mentor",
+            title: "Ask a Mentor",
             onTilePressed: () {
 
             },
@@ -69,13 +69,6 @@ class _DrawerScreenState extends State<DrawerScreen> {
           DrawerListTile(
             iconData: Icons.perm_media,
             title: "Video Playlist",
-            onTilePressed: () {
-
-            },
-          ),
-          DrawerListTile(
-            iconData: Icons.feedback,
-            title: "Saran",
             onTilePressed: () {
 
             },
