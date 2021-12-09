@@ -110,3 +110,18 @@ Berikut adalah user persona untuk student mentee:
 
 ![Persona2](/assets/images/Student-Normal.png)
 
+&nbsp;
+
+## 🖥️ Pembagian Tugas
+
+<p> Berikut ini merupakan pembagian tugas kelompok kami: </p>
+
+| Nama  | Pembagian Modul |
+|---|---|
+| Chalika Vanya Resya  | Video Playlist  |
+| Dimas Ilham Danesamarruf  | Agenda  |
+| Fikriaffan Fadlil  | Notes  |
+| Jenny  | Schedule Kuliah  |
+| Muhammad Hannan Massimo Madjid  | Ask a Mentor  |
+| Rafa Aurielle Adinda Diorra  | Study Communities  |
+| Zachra Shafira Ramadhanty  | Jadwal Belajar Bareng  |
