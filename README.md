@@ -114,7 +114,7 @@ Berikut adalah user persona untuk student mentee:
 
 ## 🖥️ Integrasi Web Service
 
-Stu-do-list menggunakan implementasi REST API pada berkas views.py dan melakukan penyimpanan data pada berkas JSON untuk mendapatkan data yang telah dimasukkan pada forms baik lewat website atau aplikasi sebagai pengintegrasian data dengan web service atas halaman web sebelumnya (https://stu-do-list.herokuapp.com/).
+Studolist Mobile menggunakan Flutter untuk mengintegrasikan front-end. Sementara itu, untuk back-end, digunakan implementasi REST API pada berkas views.py dan melakukan penyimpanan data pada berkas JSON untuk mendapatkan data yang telah dimasukkan pada forms baik lewat website atau aplikasi sebagai pengintegrasian data dengan web service atas halaman web sebelumnya (https://stu-do-list.herokuapp.com/).
 
 &nbsp;
 
