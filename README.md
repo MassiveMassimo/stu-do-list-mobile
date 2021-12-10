@@ -23,8 +23,7 @@
 &nbsp;
 
 ## 🔗 Link Download APK
-<!-- [stu-do-list](https://stu-do-list.herokuapp.com/) -->
--- nama link --
+[stu-do-list](https://github.com/MassiveMassimo/stu-do-list-mobile/releases/tag/v1.0.1)
 
 &nbsp;
 
