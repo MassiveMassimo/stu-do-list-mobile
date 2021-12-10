@@ -23,7 +23,7 @@
 &nbsp;
 
 ## 🔗 Link Download APK
-[stu-do-list](https://github.com/MassiveMassimo/stu-do-list-mobile/releases/tag/v1.0.1)
+[stu-do-list](https://github.com/MassiveMassimo/stu-do-list-mobile/releases/latest)
 
 &nbsp;
 
