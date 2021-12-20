@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/screens/home.dart';
+import 'package:mobile/screens/ask-a-mentor/ask_a_mentor_page.dart';
 
 class DrawerScreen extends StatefulWidget {
   const DrawerScreen({Key? key}) : super(key: key);
@@ -21,7 +23,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
             iconData: Icons.home,
             title: "Home",
             onTilePressed: () {
-
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage(title: 'Stu-do-list Home Page')),
+              );
             },
           ),
           DrawerListTile(
@@ -35,7 +40,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
             iconData: Icons.question_answer,
             title: "Ask a Mentor",
             onTilePressed: () {
-
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AskAMentorPage(title: 'Ask a Mentor')),
+              );
             },
           ),
           DrawerListTile(
