@@ -25,7 +25,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
             onTilePressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomePage(title: 'Stu-do-list Home Page')),
+                MaterialPageRoute(builder: (context) => HomePage(title: 'Stu-do-list')),
               );
             },
           ),
