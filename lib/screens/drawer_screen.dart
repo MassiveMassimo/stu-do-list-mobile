@@ -15,7 +15,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
     return Drawer(
       child: ListView(
         children: <Widget>[
-          UserAccountsDrawerHeader(
+          const UserAccountsDrawerHeader(
             accountName: Text("Name"),
             accountEmail: Text("email@ui.ac.id"),
           ),

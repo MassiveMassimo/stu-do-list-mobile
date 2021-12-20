@@ -40,6 +40,7 @@ class _HomePageState extends State<HomePage> {
       drawer: DrawerScreen(),
       appBar: AppBar(
         title: Text(widget.title),
+        backgroundColor: Color(0xFF212529),
       ),
       body: Center(
         child: Column(
