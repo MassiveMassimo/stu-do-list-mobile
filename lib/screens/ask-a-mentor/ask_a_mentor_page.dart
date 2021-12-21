@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/screens/drawer_screen.dart';
-import 'package:mobile/screens/home.dart';
+import 'package:mobile/screens/ask-a-mentor/post_form.dart';
 import 'package:mobile/screens/ask-a-mentor/widgets/semua.dart';
 import 'package:mobile/screens/ask-a-mentor/widgets/alin.dart';
 import 'package:mobile/screens/ask-a-mentor/widgets/mppi.dart';
 import 'package:mobile/screens/ask-a-mentor/widgets/pbp.dart';
 import 'package:mobile/screens/ask-a-mentor/widgets/sda.dart';
 import 'package:mobile/screens/ask-a-mentor/widgets/sosi.dart';
-import 'dart:math';
 
 class AskAMentorPage extends StatefulWidget {
-  const AskAMentorPage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  const AskAMentorPage({Key? key}) : super(key: key);
 
   @override
   _AskAMentorPageState createState() => _AskAMentorPageState();
@@ -40,7 +37,7 @@ class _AskAMentorPageState extends State<AskAMentorPage> {
     return Scaffold(
         drawer: DrawerScreen(),
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text("Ask a Mentor"),
           backgroundColor: Color(0xFF212529),
         ),
         body: PageView(
@@ -59,7 +56,7 @@ class _AskAMentorPageState extends State<AskAMentorPage> {
         floatingActionButton: FloatingActionButton(
           onPressed: () => Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => HomePage(title: 'Stu-do-list')),
+            MaterialPageRoute(builder: (context) => PostForm()),
           ),
           tooltip: 'Tampah Pertanyaan',
           child: const Icon(Icons.add_comment),

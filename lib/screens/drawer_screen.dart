@@ -25,7 +25,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
             onTilePressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomePage(title: 'Stu-do-list')),
+                MaterialPageRoute(builder: (context) => HomePage()),
               );
             },
           ),
@@ -42,7 +42,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
             onTilePressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AskAMentorPage(title: 'Ask a Mentor')),
+                MaterialPageRoute(builder: (context) => AskAMentorPage()),
               );
             },
           ),
