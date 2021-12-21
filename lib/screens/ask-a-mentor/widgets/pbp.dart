@@ -18,6 +18,9 @@ class _PBPPageState extends State<PBPPage> {
           child: Card(
             clipBehavior: Clip.antiAlias,
             elevation: 10,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
             child: Column(
               children: [
                 ListTile(

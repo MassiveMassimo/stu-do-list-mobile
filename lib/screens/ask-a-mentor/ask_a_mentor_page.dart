@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/screens/drawer_screen.dart';
+import 'package:mobile/screens/home.dart';
 import 'package:mobile/screens/ask-a-mentor/widgets/semua.dart';
 import 'package:mobile/screens/ask-a-mentor/widgets/alin.dart';
 import 'package:mobile/screens/ask-a-mentor/widgets/mppi.dart';
@@ -53,6 +54,16 @@ class _AskAMentorPageState extends State<AskAMentorPage> {
             SDAPage(),
             SOSIPage(),
           ],
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage(title: 'Stu-do-list')),
+          ),
+          tooltip: 'Tampah Pertanyaan',
+          child: const Icon(Icons.add_comment),
+          
         ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Color(0xFF212529),
