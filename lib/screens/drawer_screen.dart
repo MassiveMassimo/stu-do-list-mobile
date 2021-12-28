@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/screens/home.dart';
 import 'package:mobile/screens/ask-a-mentor/ask_a_mentor_page.dart';
+import 'package:mobile/screens/study-community/community_home.dart';
 
 class DrawerScreen extends StatefulWidget {
   const DrawerScreen({Key? key}) : super(key: key);
@@ -25,16 +26,15 @@ class _DrawerScreenState extends State<DrawerScreen> {
             onTilePressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomePage(title: 'Stu-do-list')),
+                MaterialPageRoute(
+                    builder: (context) => HomePage(title: 'Stu-do-list')),
               );
             },
           ),
           DrawerListTile(
-            iconData : Icons.article,
+            iconData: Icons.article,
             title: "Agenda",
-            onTilePressed: () {
-
-            },
+            onTilePressed: () {},
           ),
           DrawerListTile(
             iconData: Icons.question_answer,
@@ -42,51 +42,46 @@ class _DrawerScreenState extends State<DrawerScreen> {
             onTilePressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AskAMentorPage(title: 'Ask a Mentor')),
+                MaterialPageRoute(
+                    builder: (context) =>
+                        AskAMentorPage(title: 'Ask a Mentor')),
               );
             },
           ),
           DrawerListTile(
             iconData: Icons.pending_actions,
             title: "Jadwal Belajar Bareng",
-            onTilePressed: () {
-
-            },
+            onTilePressed: () {},
           ),
           DrawerListTile(
             iconData: Icons.sticky_note_2,
             title: "Notes",
-            onTilePressed: () {
-
-            },
+            onTilePressed: () {},
           ),
           DrawerListTile(
             iconData: Icons.today,
             title: "Schedule Kuliah",
-            onTilePressed: () {
-
-            },
+            onTilePressed: () {},
           ),
           DrawerListTile(
             iconData: Icons.supervisor_account,
             title: "Study Communities",
             onTilePressed: () {
-
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CommunityHome()),
+              );
             },
           ),
           DrawerListTile(
             iconData: Icons.perm_media,
             title: "Video Playlist",
-            onTilePressed: () {
-
-            },
+            onTilePressed: () {},
           ),
           DrawerListTile(
             iconData: Icons.logout,
             title: "Log Out",
-            onTilePressed: () {
-
-            },
+            onTilePressed: () {},
           ),
         ],
       ),
@@ -95,10 +90,15 @@ class _DrawerScreenState extends State<DrawerScreen> {
 }
 
 class DrawerListTile extends StatelessWidget {
-  final IconData iconData ;
+  final IconData iconData;
   final String title;
   final VoidCallback onTilePressed;
-  const DrawerListTile({Key? key, required this.iconData, required this.title, required this.onTilePressed}) : super(key: key);
+  const DrawerListTile(
+      {Key? key,
+      required this.iconData,
+      required this.title,
+      required this.onTilePressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +106,10 @@ class DrawerListTile extends StatelessWidget {
       onTap: onTilePressed,
       dense: true,
       leading: Icon(iconData),
-      title: Text(title, style: TextStyle(fontSize: 16),),
+      title: Text(
+        title,
+        style: TextStyle(fontSize: 16),
+      ),
     );
   }
 }
