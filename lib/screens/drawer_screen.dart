@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/screens/home.dart';
 import 'package:mobile/screens/ask-a-mentor/ask_a_mentor_page.dart';
 import 'package:mobile/screens/study-community/community_home.dart';
+import 'package:mobile/screens/video-playlist/video_playlist_home.dart';
 
 class DrawerScreen extends StatefulWidget {
   const DrawerScreen({Key? key}) : super(key: key);
@@ -73,7 +74,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
           DrawerListTile(
             iconData: Icons.perm_media,
             title: "Video Playlist",
-            onTilePressed: () {},
+            onTilePressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => VideoPlaylistHome()),
+              );
+            },
           ),
           DrawerListTile(
             iconData: Icons.logout,
