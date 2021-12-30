@@ -4,6 +4,7 @@ import 'package:mobile/screens/ask-a-mentor/ask_a_mentor_page.dart';
 import 'package:mobile/screens/jadwal-belajar-bareng/screens/jadwal_home.dart';
 import 'package:mobile/screens/study-community/community_home.dart';
 import 'package:mobile/screens/video-playlist/video_playlist_home.dart';
+import 'package:mobile/screens/notes/notes_page.dart';
 
 class DrawerScreen extends StatefulWidget {
   const DrawerScreen({Key? key}) : super(key: key);
@@ -71,7 +72,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
           DrawerListTile(
             iconData: Icons.sticky_note_2,
             title: "Notes",
-            onTilePressed: () {},
+            onTilePressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NotesPage()),
+              );
+            },
           ),
           const SizedBox(height: 20),
           DrawerListTile(
@@ -119,9 +125,9 @@ class DrawerListTile extends StatelessWidget {
   final VoidCallback onTilePressed;
   const DrawerListTile(
       {Key? key,
-      required this.iconData,
-      required this.title,
-      required this.onTilePressed})
+        required this.iconData,
+        required this.title,
+        required this.onTilePressed})
       : super(key: key);
 
   @override
