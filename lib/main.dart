@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        fontFamily: 'Google Sans',
+        fontFamily: 'Poppins',
       ),
       routes: {
         // Main initial route
