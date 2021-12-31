@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/screens/drawer_screen.dart';
-import 'jadwal_form.dart';
+import 'package:mobile/screens/jadwal-belajar-bareng/models/jadwal_model.dart';
+import 'edit_form.dart';
 
-class FormAddPage extends StatelessWidget {
-  const FormAddPage({Key? key}) : super(key: key);
+class FormEditPage extends StatelessWidget {
+  final JadwalBelajarModel jadwalbelajar;
+  const FormEditPage({Key? key, required this.jadwalbelajar}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +18,18 @@ class FormAddPage extends StatelessWidget {
       body:
           SingleChildScrollView(
         child: Column(
-          children: const [
-            SizedBox(
+          children: <Widget> [
+            const SizedBox(
               height: 50,
             ),
-            Text(
-              "Buat Jadwal Belajar",
+            const Text(
+              "Edit Jadwal Belajar",
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            FormAdd()
+            FormEdit(jadwalbelajar: jadwalbelajar)
           ],
         ),
       ),
