@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
@@ -50,7 +49,7 @@ void printHasil(BuildContext context) {
 
 // Create a Form widget.
 class AgendaForm extends StatefulWidget {
-  const AgendaForm({Key key}) : super(key: key);
+  const AgendaForm({Key? key}) : super(key: key);
 
   @override
   AgendaFormState createState() {
@@ -61,9 +60,9 @@ class AgendaForm extends StatefulWidget {
 class AgendaFormState extends State<AgendaForm> {
   final _formKey = GlobalKey<FormState>();
 
-  Matkul selectedUser;
-  DateTime _datePicked;
-  TimeOfDay _timePicked;
+  Matkul? selectedUser;
+  DateTime? _datePicked;
+  TimeOfDay? _timePicked;
 
   // Source : https://flutteragency.com/format-datetime-in-flutter/
   String formattedDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
@@ -127,9 +126,9 @@ class AgendaFormState extends State<AgendaForm> {
                             child: DropdownButtonFormField<Matkul>(
                               hint: Text("Pilih Mata Kuliah"),
                               value: selectedUser,
-                              onChanged: (Matkul Value) {
+                              onChanged: (Matkul? Value) {
                                 setState(() {
-                                  selectedUser = Value;
+                                  selectedUser = Value!;
                                 });
                               },
                               validator: (value) {
@@ -184,7 +183,7 @@ class AgendaFormState extends State<AgendaForm> {
                                 hintText: 'Contoh: Tugas Pemrograman 3',
                               ),
                               validator: (value) {
-                                if (value.isEmpty) {
+                                if (value!.isEmpty) {
                                   setState(() => _namaTugas = "Kosong");
                                   return 'Tolong Diisi';
                                 }
@@ -226,12 +225,12 @@ class AgendaFormState extends State<AgendaForm> {
                                                     initialDate:
                                                         _datePicked == null
                                                             ? DateTime.now()
-                                                            : _datePicked,
+                                                            : _datePicked!,
                                                     firstDate: DateTime(2019),
                                                     lastDate: DateTime(2028))
                                                 .then((date) {
                                               setState(() {
-                                                _datePicked = date;
+                                                _datePicked = date!;
                                                 _tanggalController.text =
                                                     DateFormat('yyyy-MM-dd')
                                                         .format(date);
@@ -247,7 +246,7 @@ class AgendaFormState extends State<AgendaForm> {
                                         hintText: formattedDate,
                                       ),
                                       validator: (value) {
-                                        if (value.isEmpty) {
+                                        if (value!.isEmpty) {
                                           return 'Tolong Dipilih';
                                         }
                                         setState(() => _tenggatTanggal = value);
@@ -269,17 +268,17 @@ class AgendaFormState extends State<AgendaForm> {
                                               context: context,
                                               initialTime: _timePicked == null
                                                   ? TimeOfDay.now()
-                                                  : _timePicked,
+                                                  : _timePicked!,
                                             ).then((time) {
                                               setState(() {
-                                                _timePicked = time;
+                                                _timePicked = time!;
                                                 // Source : https://stackoverflow.com/questions/57561585/flutter-convert-24-hour-format-to-12-hour-format?rq=1
                                                 DateTime time24format =
                                                     DateFormat("hh:mm").parse(
-                                                        _timePicked.hour
+                                                        _timePicked!.hour
                                                                 .toString() +
                                                             ":" +
-                                                            _timePicked.minute
+                                                            _timePicked!.minute
                                                                 .toString());
                                                 _waktuController.text =
                                                     timeFormat
@@ -296,7 +295,7 @@ class AgendaFormState extends State<AgendaForm> {
                                         hintText: '23:55',
                                       ),
                                       validator: (value) {
-                                        if (value.isEmpty) {
+                                        if (value!.isEmpty) {
                                           return 'Tolong Dipilih';
                                         }
                                         setState(() => _tenggatWaktu = value);
@@ -332,7 +331,7 @@ class AgendaFormState extends State<AgendaForm> {
                                     'Keterangan tambahan di lembar soal tugas',
                               ),
                               validator: (value) {
-                                if (value.isEmpty) {
+                                if (value!.isEmpty) {
                                   setState(() => _keterangan = "Kosong");
                                   return 'Tolong Diisi';
                                 }
@@ -378,8 +377,8 @@ class AgendaFormState extends State<AgendaForm> {
                                 ),
                                 onPressed: () {
                                   // If it's valid, get the value and print it to the console
-                                  if (_formKey.currentState.validate()) {
-                                    // printHasil(context);
+                                  if (_formKey.currentState!.validate()) {
+                                    printHasil(context);
                                     Navigator.pop(context);
                                   } else {
                                     print('belom lengkap\n');
