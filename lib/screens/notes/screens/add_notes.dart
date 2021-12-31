@@ -49,7 +49,7 @@ class _FormNotesState extends State<FormNotes> {
     return Scaffold(
         drawer: const DrawerScreen(),
         appBar: AppBar(
-          title: Text('Komunitas Belajar',
+          title: Text('Notes',
               style: TextStyle(color: Colors.grey.shade200)),
           backgroundColor: const Color(0xFF212529),
         ),
@@ -145,13 +145,13 @@ class _FormNotesState extends State<FormNotes> {
                       controller: link,
                       decoration: const InputDecoration(
                         hintText: "Masukkan situs dalam bentul URL",
-                        labelText: "Situs Grup ",
+                        labelText: "URL Notes ",
                         border: OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.text,
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return "Situs tidak boleh kosong";
+                          return "URL tidak boleh kosong";
                         }
                       }),
                   const SizedBox(height: 20),
