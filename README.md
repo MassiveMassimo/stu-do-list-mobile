@@ -74,30 +74,19 @@ Stu-Do-List kami ciptakan dengan harapan dapat membantu teman-teman yang mungkin
 
 ## 👥 User Personas
 
-<h3>User yang belum log in</h3>
-<p>Berikut ini merupakan hal-hal yang dapat dilakukan oleh pengguna yang belum melakukan log in:
-<br> - Melihat jadwal belajar yang sudah ada.
-<br> - Melihat notes yang sudah ditambahkan.
-<br> - Melihat card pada study communities.
-<br> - Melihat playlist, berupa video pembelajaran maupun lagu-lagu, yang sudah dibagikan.
-<br> - Membuka laman about us.
-<br> - Memberikan kritik dan saran.
-</p>
-
-<h3>User yang sudah login - Role Student</h3>
+<h3>User: Role Student</h3>
 <p>Student merupakan mahasiswa yang sedang melakukan pembelajaran secara daring dan membutuhkan akses terhadap sumber-sumber pembelajaran mata kuliah di luar perkuliahan dan juga membutuhkan bimbingan mentor. Berikut ini merupakan hal-hal yang dapat dilakukan oleh seorang student:
 <br> - Mengakses seluruh fitur yang dapat diakses oleh user yang belum login
 <br> - Melihat agenda terkini pada hari tersebut.
 <br> - Melihat daftar kelas beserta jadwalnya.
 <br> - Membuat jadwal belajar bersama serta mengedit isi dan keterangannya.
-<br> - Melihat jadwal kelas user yang sudah login lainnya.
 <br> - Membagikan catatan-catatan materi perkuliahan pada notes.
 <br> - Membuat card pada study communities.
 <br> - Membagikan playlist berupa video pembelajaran, maupun lagu yang dapat menemani saat belajar.
 <br> - Bertanya ataupun menjawab pada ask a mentor. 
 </p>
 
-<h3>User yang sudah login - Role Mentor</h3>
+<h3>User: Role Mentor</h3>
 <p>Mentor merupakan mahasiswa yang memiliki pengalaman atau pengetahuan yang cukup tinggi pada mata kuliah tertentu. Seorang mentor dapat mengakses seluruh fitur pada Stu-Do-List layaknya student. Stu-Do-List menyediakan fitur ask a mentor berupa forum diskusi yang dapat dijawab oleh mentor untuk membantu permasalahan student dalam melakukan pembelajaran. Mentor juga dapat memberikan catatan yang validitasnya lebih terverifikasi pada fitur notes.
 </p>
 
