@@ -379,6 +379,7 @@ class AgendaFormState extends State<AgendaForm> {
                                   // If it's valid, get the value and print it to the console
                                   if (_formKey.currentState!.validate()) {
                                     printHasil(context);
+                                    submit(context);
                                     Navigator.pop(context);
                                   } else {
                                     print('belom lengkap\n');

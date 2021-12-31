@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:mobile/screens/ask-a-mentor/providers/post_provider.dart';
 
 class SemuaPage extends StatefulWidget {
   const SemuaPage({Key? key}) : super(key: key);
@@ -11,7 +14,10 @@ class SemuaPage extends StatefulWidget {
 class _SemuaPageState extends State<SemuaPage> {
   @override
   Widget build(BuildContext context) {
+    final postProvider = Provider.of<PostProvider>(context);
+
     return ListView.builder(
+      itemCount: postProvider.posts.length,
       itemBuilder: (_, index) {
         return Padding(
           padding: const EdgeInsets.all(8.0),

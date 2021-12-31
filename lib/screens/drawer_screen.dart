@@ -5,6 +5,8 @@ import 'package:mobile/screens/jadwal-belajar-bareng/screens/jadwal_home.dart';
 import 'package:mobile/screens/study-community/community_home.dart';
 import 'package:mobile/screens/video-playlist/video_playlist_home.dart';
 import 'package:mobile/screens/notes/notes_page.dart';
+import 'package:mobile/screens/schedule-kuliah/schedule_kuliah.dart';
+import 'package:mobile/screens/schedule-kuliah/screens/schedule_kuliah_table.dart';
 import 'package:mobile/screens/agenda/screens/agenda_home.dart';
 
 class DrawerScreen extends StatefulWidget {
@@ -94,7 +96,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
           DrawerListTile(
             iconData: Icons.today,
             title: "Schedule Kuliah",
-            onTilePressed: () {},
+            onTilePressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ScheduleKuliah()),
+              );
+            },
           ),
           const SizedBox(height: 20),
           DrawerListTile(
