@@ -5,6 +5,7 @@ import 'package:mobile/screens/drawer_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
+import 'edit_jadwal.dart';
 
 class JadwalBelajarBarengHome extends StatelessWidget {
   const JadwalBelajarBarengHome({ Key? key }) : super(key: key);
@@ -58,7 +59,7 @@ class _JadwalBelajarBarengHome extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const FormAddPage()),
-                  );
+                    );
                 },
                 child: const Padding(
                   padding: EdgeInsets.symmetric(
@@ -86,6 +87,7 @@ class _JadwalBelajarBarengHome extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    const SizedBox(height: 25),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 20, horizontal: 20),
@@ -109,14 +111,27 @@ class _JadwalBelajarBarengHome extends StatelessWidget {
                                           tileColor: Colors.grey.shade200,
                                           contentPadding:
                                               const EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
-                                          trailing: IconButton(
+                                          trailing: Wrap(
+                                            children: <Widget>[ 
+                                              IconButton(
+                                              icon: const Icon(Icons.edit),
+                                              onPressed: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(builder: (context) => FormEditPage(jadwalbelajar: jadwalProvider.jadwal[index],),),
+                                                );
+                                              },
+                                              ),
+                                              IconButton(
                                               icon: const Icon(Icons.delete),
                                               onPressed: () {
                                                 jadwalProvider.hapusJadwal(
                                                   jadwalProvider.jadwal[index]
                                                 );
                                               },
-                                            ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         Container(
                                           padding: const EdgeInsets.only(top: 16, bottom: 16, left: 16.0),

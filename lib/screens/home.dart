@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: const DrawerScreen(),
       appBar: AppBar(
-        title: Text("Stu-do-list"),
+        title: const Text("Stu-do-list"),
         backgroundColor: const Color(0xFF212529),
       ),
       body: Center(
