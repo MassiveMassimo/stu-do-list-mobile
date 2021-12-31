@@ -15,8 +15,8 @@ class CustomPrimaryButton extends StatelessWidget {
 
   dynamic login() async {
     // 'username' and 'password' should be the values of the user login form.
-    final response = await request!
-        .login("https://stu-do-list.herokuapp.com/login_flutter/", {
+    final response =
+        await request!.login("http://127.0.0.1:8000/login_flutter/", {
       'username': username,
       'password': password,
     });

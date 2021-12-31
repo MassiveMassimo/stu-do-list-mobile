@@ -70,7 +70,7 @@ class StudyCommunityPage extends StatelessWidget {
                     children: [
                       ElevatedButton(
                           onPressed: () {
-                            launch('https://discord.gg/kMtvNDBb');
+                            launch('https://discord.gg/ncqRF9jVYm');
                           },
                           child: const Text('Masuk'))
                     ],
