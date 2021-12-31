@@ -19,6 +19,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
     return Drawer(
       child: ListView(
         children: <Widget>[
+          const SizedBox(height: 25),
           SizedBox(
             height: 50,
             width: 50,
@@ -26,8 +27,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
           ),
           const Text(
             'Stu-do-list',
+            textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 18, fontWeight: FontWeight.w700, color: Colors.white),
+                fontSize: 18, fontWeight: FontWeight.w700, color: Color.fromARGB(255, 33, 37, 41)),
           ),
           const SizedBox(height: 20),
           DrawerListTile(
