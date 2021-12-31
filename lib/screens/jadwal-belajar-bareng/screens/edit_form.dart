@@ -221,7 +221,7 @@ class FormEditState extends State<FormEdit> {
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
                 child: const Text(
-                  'Buat Jadwal',
+                  'Simpan',
                   style: TextStyle(color: Colors.white, fontSize: 17),
                 ),
                 padding:

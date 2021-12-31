@@ -23,7 +23,7 @@ class FormEditPage extends StatelessWidget {
               height: 50,
             ),
             const Text(
-              "Buat Jadwal Belajar",
+              "Edit Jadwal Belajar",
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 30,
