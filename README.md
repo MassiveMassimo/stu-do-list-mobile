@@ -58,7 +58,7 @@ Stu-Do-List kami ciptakan dengan harapan dapat membantu teman-teman yang mungkin
 <p>Halaman ask a mentor menyediakan sebuah forum diskusi yang dibagi-bagi berdasarkan mata kuliah yang ada. Apabila pengguna memiliki pertanyaan seputar akademis, pengguna dapat memposting sebuah pertanyaan yang nantinya dapat di-reply oleh "mentor". Walaupun tidak secara eksplisit diberikan role mentor, setiap pengguna dapat membalas pertanyaan yang telah diajukan oleh pengguna lain guna membantu kesulitan atau sekadar berbagi pengetahuan.</p>
 
 <h3>Notes</h3>
-<p>Stu-Do-List menghadirkan fitur ini agar para pengguna dapat menambahkan catatan tentang perkuliahan sesuai dengan mata kuliah yang dipilih. Pengguna dapat memasukkan detail dari catatan tersebut, seperti nama matkul, judul materi, serta sumber materi. Setelah pengguna menambahkan catatan, profil pengguna akan tampil di halaman fitur ini sehingga pengguna lain dapat mengetahui siapa yang menambahkan catatan tersebut.</p>
+<p>Stu-Do-List menghadirkan fitur ini agar para pengguna dapat menambahkan catatan tentang perkuliahan sesuai dengan mata kuliah yang dipilih. Pengguna dapat memasukkan detail dari catatan tersebut, seperti nama matkul, topik, nama penulis, keterangan tambahan, serta link catatan.</p>
 
 <h3>Study Communities</h3>
 <p>Pada halaman Study Communities, pengguna dapat membagikan link komunitas/grup belajar (misal: link grup line atau discord kelas). Pengguna dapat memasukkan detail dari grup tersebut, seperti nama matkul terkait, kelas, dan lain sebagainya. Selain itu, pada halaman ini juga akan dicantumkan link menuju discord official Stu-Do-List agar para pengguna dapat bertukar pesan dan melakukan berbagai aktivitas lainnya. </p>
