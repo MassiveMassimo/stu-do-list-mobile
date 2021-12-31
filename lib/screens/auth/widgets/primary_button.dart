@@ -54,7 +54,6 @@ class CustomPrimaryButton extends StatelessWidget {
             onTap: () async {
               if (isRegister) {
                 await login();
-                print(request!.role);
               }
               Navigator.push(
                 context,
