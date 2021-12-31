@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/material.dart';
 
 class CookieRequest {
   Map<String, String> headers = {};
@@ -13,11 +13,6 @@ class CookieRequest {
 
   bool loggedIn = false;
   bool initialized = false;
-
-  String username = "";
-  String email = "";
-  String role = "";
-  bool isBiodata = false;
 
   Future init(BuildContext context) async {
     if (!initialized) {
@@ -54,9 +49,6 @@ class CookieRequest {
 
     if (response.statusCode == 200) {
       loggedIn = true;
-      username = json.decode(response.body)['username'];
-      email = json.decode(response.body)['email'];
-      role = json.decode(response.body)['role'];
     } else {
       loggedIn = false;
     }
@@ -138,7 +130,6 @@ class CookieRequest {
 
     if (response.statusCode == 200) {
       loggedIn = false;
-      username = "";
     } else {
       loggedIn = true;
     }
