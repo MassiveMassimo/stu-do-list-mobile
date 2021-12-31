@@ -39,12 +39,32 @@ class NotesProvider with ChangeNotifier {
   }
 
   void deleteNotes(Notes notes) async {
-    int? notes_id = notes.id;
+    int? notesId = notes.id;
     final response = await http.delete(Uri.parse(
-        'https://stu-do-list.herokuapp.com/notes/json/notes/$notes_id'));
+        'https://stu-do-list.herokuapp.com/notes/json/notes/$notesId'));
     if (response.statusCode == 204) {
       _notes.remove(notes);
       notifyListeners();
+    }
+  }
+  static Future<List<Notes>> getNotes(String query) async {
+    final url = Uri.parse(
+        'https://stu-do-list.herokuapp.com/notes/json/notes');
+    final response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      final List notes = json.decode(response.body);
+
+      return notes.map((json) => Notes.fromJson(json)).where((notes) {
+        final matkulLower = notes.matkul.toLowerCase();
+        final penulisLower = notes.penulis.toLowerCase();
+        final searchLower = query.toLowerCase();
+
+        return matkulLower.contains(searchLower) ||
+            penulisLower.contains(searchLower);
+      }).toList();
+    } else {
+      throw Exception();
     }
   }
 }
