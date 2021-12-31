@@ -4,7 +4,7 @@ class LandingPage extends StatelessWidget {
   const LandingPage({ Key? key }) : super(key: key);
   List<Widget> pageChildren(double width) {
     return <Widget>[
-      Container(
+      SizedBox(
         width: width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

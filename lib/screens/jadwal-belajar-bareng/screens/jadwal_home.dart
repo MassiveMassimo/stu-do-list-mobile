@@ -29,7 +29,7 @@ class _JadwalBelajarBarengHome extends StatelessWidget {
     return Scaffold(
       drawer: const DrawerScreen(),
       appBar: AppBar(
-        title: Text('Jadwal Belajar Bareng'),
+        title: const Text('Jadwal Belajar Bareng'),
         backgroundColor: const Color.fromARGB(255, 33, 37, 41),
       ),
       body: Container(
