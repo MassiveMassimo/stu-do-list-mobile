@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/screens/jadwal-belajar-bareng/models/jadwal_model.dart';
 import 'package:provider/provider.dart';
 import 'package:mobile/screens/jadwal-belajar-bareng/providers/jadwal_provider.dart';
+import 'package:mobile/screens/jadwal-belajar-bareng/screens/jadwal_home.dart';
 
 class FormAdd extends StatefulWidget {
   const FormAdd({ Key? key }) : super(key: key);
@@ -32,7 +33,10 @@ class FormAddState extends State<FormAdd> {
     if(tambahPrioritas.isNotEmpty && tambahMatkul.isNotEmpty && tambahWaktu.isNotEmpty && tambahTopik.isNotEmpty && tambahInfo.isNotEmpty && tambahSitus.isNotEmpty){
       final JadwalBelajarModel _jadwal = JadwalBelajarModel(prioritas: tambahPrioritas, matkul: tambahMatkul, waktu: tambahWaktu, topik: tambahTopik, info: tambahInfo, link: tambahSitus);
       Provider.of<JadwalBelajarProvider>(context, listen: false).tambahJadwal(_jadwal);
-      Navigator.pop(context);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const JadwalBelajarBarengHome()),
+      );
     }
   }
 
@@ -50,6 +54,7 @@ class FormAddState extends State<FormAdd> {
         if (value!.isEmpty) {
           return 'Prioritas tidak boleh kosong';
         }
+        return null;
       },
     );
   }
@@ -68,6 +73,7 @@ class FormAddState extends State<FormAdd> {
         if (value!.isEmpty) {
           return 'Mata kuliah tidak boleh kosong';
         }
+        return null;
       },
     );
   }
@@ -86,6 +92,7 @@ class FormAddState extends State<FormAdd> {
         if (value!.isEmpty) {
           return 'Waktu tidak boleh kosong';
         }
+        return null;
       },
     );
   }
@@ -104,6 +111,7 @@ class FormAddState extends State<FormAdd> {
         if (value!.isEmpty) {
           return 'Topik tidak boleh kosong';
         }
+        return null;
       },
     );
   }
@@ -122,7 +130,7 @@ class FormAddState extends State<FormAdd> {
         if (value!.isEmpty) {
           return 'Informasi tidak boleh kosong';
         }
-
+        return null;
       },
     );
   }
@@ -138,9 +146,14 @@ class FormAddState extends State<FormAdd> {
       ),
       keyboardType: TextInputType.text,
       validator: (value) {
+        String pattern = r'(http|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?';
+        RegExp regExp = RegExp(pattern);
         if (value!.isEmpty) {
           return 'Situs tidak boleh kosong';
+        } else if (!regExp.hasMatch(value)) {
+          return 'Mohon hanya isi dengan URL yang valid';
         }
+        return null;
       },
     );
   }
@@ -197,10 +210,12 @@ class FormAddState extends State<FormAdd> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                 onPressed: (){
-                  if (!_formKey.currentState!.validate()) {
-                  return;
+                  if (_formKey.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Jadwal berhasil ditambahkan.')),
+                    );
+                    onAdd();
                   }
-                  onAdd;
                 }
               ),
                     ],
