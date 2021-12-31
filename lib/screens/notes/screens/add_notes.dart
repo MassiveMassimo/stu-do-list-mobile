@@ -13,7 +13,7 @@ class FormNotes extends StatefulWidget {
 }
 
 class _FormNotesState extends State<FormNotes> {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   final penulis = TextEditingController();
   String? matkul;
@@ -57,7 +57,7 @@ class _FormNotesState extends State<FormNotes> {
         ),
         body: Center(
           child: Form(
-            key: formKey,
+            key: _formKey,
             child: ListView(
                 shrinkWrap: true,
                 padding: const EdgeInsets.only(
@@ -85,13 +85,14 @@ class _FormNotesState extends State<FormNotes> {
                         if (value!.isEmpty) {
                           return "Penulis tidak boleh kosong";
                         }
+                        return null;
                       }),
                   const SizedBox(height: 16),
                   DropdownButtonFormField<String>(
                     decoration: const InputDecoration(
-                        labelText: 'Pilih Mata Kuliah',
+                        labelText: 'Mata Kuliah',
                         border: OutlineInputBorder()),
-                    value: matkul,
+                    // value: matkul,
                     items: [
                       'Aljabar Linear',
                       'Metodologi Penelitian dan Penulisan Ilmiah',
@@ -107,10 +108,12 @@ class _FormNotesState extends State<FormNotes> {
                     onChanged: (value) {
                       setState(() => matkul = value!);
                     },
+
                     validator: (value) {
-                      if (value!.isEmpty) {
+                      if (value == null) {
                         return "Mata kuliah tidak boleh kosong";
                       }
+                      return null;
                     },
                   ),
                   const SizedBox(height: 16),
@@ -124,8 +127,9 @@ class _FormNotesState extends State<FormNotes> {
                       keyboardType: TextInputType.text,
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return "Kelas tidak boleh kosong";
+                          return "Topik tidak boleh kosong";
                         }
+                        return null;
                       }),
 
                   const SizedBox(height: 16),
@@ -141,20 +145,27 @@ class _FormNotesState extends State<FormNotes> {
                         if (value!.isEmpty) {
                           return "Keterangan tidak boleh kosong";
                         }
+                        return null;
                       }),
                   const SizedBox(height: 16),
                   TextFormField(
                       controller: link,
                       decoration: const InputDecoration(
-                        hintText: "Masukkan situs dalam bentul URL",
-                        labelText: "URL Notes ",
+                        hintText: "Masukkan link catatanmu",
+                        labelText: "Link",
                         border: OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.text,
                       validator: (value) {
+                        String pattern = r'(http|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?';
+                        RegExp regExp = RegExp(pattern);
                         if (value!.isEmpty) {
-                          return "URL tidak boleh kosong";
+                          return 'Link tidak boleh kosong';
                         }
+                        else if (!regExp.hasMatch(value)) {
+                          return 'Mohon hanya isi dengan URL yang valid';
+                        }
+                        return null;
                       }),
                   const SizedBox(height: 20),
                   ButtonBar(
@@ -171,7 +182,14 @@ class _FormNotesState extends State<FormNotes> {
                               side: const BorderSide(
                                   color: Colors.red, width: 1))),
                       ElevatedButton(
-                          onPressed: onAdd,
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(content: Text('Notes berhasil dibagikan.')),
+                              );
+                              onAdd();
+                            }
+                          },
                           child: const Text('Bagikan'),
                           style: ElevatedButton.styleFrom(
                               primary: Colors.blueAccent.shade400))

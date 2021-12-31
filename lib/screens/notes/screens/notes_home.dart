@@ -195,6 +195,9 @@ class NotesHomeState extends State<NotesHome> {
                                   notesProvider.deleteNotes(note);
                                   notes.removeAt(index);
                                 });
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(content: Text('Notes berhasil dihapus.')),
+                                );
                               },
                             )
                           ],
