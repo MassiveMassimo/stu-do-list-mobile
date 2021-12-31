@@ -137,7 +137,7 @@ class NotesHomeState extends State<NotesHome> {
                           Widget>[
                         ListTile(
                           title: Text(note.matkul,
-                              style: const TextStyle(fontSize: 16)),
+                              style: const TextStyle(fontSize: 18)),
                           tileColor: Colors.grey.shade100,
                           contentPadding: const EdgeInsets.symmetric(
                               vertical: 0.0, horizontal: 16.0),
@@ -147,14 +147,14 @@ class NotesHomeState extends State<NotesHome> {
                           alignment: Alignment.centerLeft,
                           child: Text(note.topik,
                               style: const TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 14)),
+                                  fontWeight: FontWeight.bold, fontSize: 20)),
                         ),
                         Container(
                           padding: const EdgeInsets.only(left: 16),
                           alignment: Alignment.centerLeft,
                           child: Text('Penulis: '+note.penulis,
                               style: const TextStyle(
-                                  color: Colors.grey, fontSize: 12)),
+                                  color: Colors.grey, fontSize: 14)),
                         ),
                         Container(
                           padding: const EdgeInsets.only(top: 8, left: 16),
@@ -164,7 +164,7 @@ class NotesHomeState extends State<NotesHome> {
                             style: const TextStyle(
                                 color: Colors.black,
                                 fontStyle: FontStyle.italic,
-                                fontSize: 14),
+                                fontSize: 16),
                           ),
                         ),
                         Container(
@@ -176,7 +176,7 @@ class NotesHomeState extends State<NotesHome> {
                                 note.link,
                                 textAlign: TextAlign.left,
                                 style: const TextStyle(
-                                    color: Colors.blue, fontSize: 14),
+                                    color: Colors.blue, fontSize: 16),
                               ),
                               onTap: () =>
                                   launch(note.link)),
