@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'dart:convert';
-import '../models/agenda_models.dart';
+import 'package:mobile/screens/agenda/models/agenda_models.dart';
 import 'package:mobile/screens/drawer_screen.dart';
 
 class Matkul {

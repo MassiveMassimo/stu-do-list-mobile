@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import './agenda_form.dart';
-import '../models/agenda_models.dart';
+import 'package:mobile/screens/agenda/screens/agenda_form.dart';
+import 'package:mobile/screens/agenda/models/agenda_models.dart';
 import 'package:mobile/screens/drawer_screen.dart';
 
 List<AgendaModel> agendas = [];
