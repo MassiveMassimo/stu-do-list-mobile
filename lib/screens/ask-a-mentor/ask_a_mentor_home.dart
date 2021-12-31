@@ -58,7 +58,7 @@ class _AskAMentorHomeState extends State<AskAMentorHome> {
             context,
             MaterialPageRoute(builder: (context) => PostForm()),
           ),
-          tooltip: 'Tampah Pertanyaan',
+          tooltip: 'Tambah Pertanyaan',
           child: const Icon(Icons.add_comment),
         ),
         bottomNavigationBar: BottomNavigationBar(

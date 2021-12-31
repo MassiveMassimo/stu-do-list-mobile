@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:mobile/screens/ask-a-mentor/providers/post_provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class SemuaPage extends StatefulWidget {
   const SemuaPage({Key? key}) : super(key: key);
@@ -32,7 +31,10 @@ class _SemuaPageState extends State<SemuaPage> {
               children: [
                 ListTile(
                   leading: Icon(Icons.arrow_drop_down_circle),
-                  title: Text(postProvider.posts[index].title + "  |  " + postProvider.posts[index].matkul),
+                  title: Text(
+                    postProvider.posts[index].title + "  |  " + postProvider.posts[index].matkul,
+                    style: const TextStyle(fontWeight: FontWeight.bold)
+                  ),
                   subtitle: Text(
                     "Ditanya oleh " + postProvider.posts[index].username + " pada " + postProvider.posts[index].time,
                     style: TextStyle(color: Colors.black.withOpacity(0.6)),
@@ -41,7 +43,7 @@ class _SemuaPageState extends State<SemuaPage> {
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    'Greyhound divisively hello coldly wonderfully marginally far upon excluding.',
+                    postProvider.posts[index].message,
                     style: TextStyle(color: Colors.black.withOpacity(0.6)),
                   ),
                 ),
