@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:mobile/screens/ask-a-mentor/providers/post_provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SemuaPage extends StatefulWidget {
   const SemuaPage({Key? key}) : super(key: key);
@@ -17,6 +17,7 @@ class _SemuaPageState extends State<SemuaPage> {
     final postProvider = Provider.of<PostProvider>(context);
 
     return ListView.builder(
+      shrinkWrap: true,
       itemCount: postProvider.posts.length,
       itemBuilder: (_, index) {
         return Padding(
@@ -31,9 +32,9 @@ class _SemuaPageState extends State<SemuaPage> {
               children: [
                 ListTile(
                   leading: Icon(Icons.arrow_drop_down_circle),
-                  title: const Text('Card title 1'),
+                  title: Text(postProvider.posts[index].title + "  |  " + postProvider.posts[index].matkul),
                   subtitle: Text(
-                    'Secondary Text',
+                    "Ditanya oleh " + postProvider.posts[index].username + " pada " + postProvider.posts[index].time,
                     style: TextStyle(color: Colors.black.withOpacity(0.6)),
                   ),
                 ),
@@ -51,13 +52,13 @@ class _SemuaPageState extends State<SemuaPage> {
                       onPressed: () {
                         // Perform some action
                       },
-                      child: const Text('ACTION 1'),
+                      child: const Text('Komen'),
                     ),
                     TextButton(
                       onPressed: () {
                         // Perform some action
                       },
-                      child: const Text('ACTION 2'),
+                      child: const Text('Lihat'),
                     ),
                   ],
                 ),
