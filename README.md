@@ -45,7 +45,7 @@ Stu-Do-List kami ciptakan dengan harapan dapat membantu teman-teman yang mungkin
 
 ## 📃 Daftar Modul
 <h3>Landing Page</h3>
-<p> Halaman landing page stu-do-list menampilkan sedikit cerita dibalik aplikasi kami, deskripsi serta kegunaan dari website Stu-Do-List yang ditujukan untuk membantu para mahasiswa yang sedang melaksanakan perkuliahan secara daring. Selain itu, landing page aplikasi stu-do-list juga tersedia button "Gabung Sekarang" yang akan menampilkan form authentication log in yang dapat diisi oleh user. Untuk dapat menikmati fitur pada aplikasi kami, user diwajibkan untuk login terlebih dahulu. Apabila user belum memiliki akun, user dapat membuat akun pada register form dengan mengisi username, email, dan password.Setelah user berhasil log in, user dapat menikmati semua fitur-fitur yang tersedia pada aplikasi stu-do-list.</p>
+<p> Halaman landing page stu-do-list menampilkan sedikit cerita dibalik aplikasi kami, deskripsi serta kegunaan dari website Stu-Do-List yang ditujukan untuk membantu para mahasiswa yang sedang melaksanakan perkuliahan secara daring.</p>
 
 <h3>Agenda</h3>
 <p>Stu-Do-List menyediakan fitur agenda untuk mempermudah pengguna dalam mengingat tugas-tugas yang harus dikerjakan. Pada fitur ini, pengguna dapat mengakses to-do-list serta memasukkan input berupa hal-hal yang ingin dikerjakan pada hari tersebut. Selain itu, informasi-informasi mengenai jadwal kelas pengguna, link pertemuan kelas, dan deadline tugas juga tersedia pada halaman agenda. Hal ini tentunya memudahkan pengguna dalam menyusun rencana dan prioritasnya sebagai seorang mahasiswa serta menghindarkan pengguna dari kelupaan akan tugas atau kelas yang harus diikuti.
@@ -76,7 +76,6 @@ Stu-Do-List kami ciptakan dengan harapan dapat membantu teman-teman yang mungkin
 
 <h3>User: Role Student</h3>
 <p>Student merupakan mahasiswa yang sedang melakukan pembelajaran secara daring dan membutuhkan akses terhadap sumber-sumber pembelajaran mata kuliah di luar perkuliahan dan juga membutuhkan bimbingan mentor. Berikut ini merupakan hal-hal yang dapat dilakukan oleh seorang student:
-<br> - Mengakses seluruh fitur yang dapat diakses oleh user yang belum login
 <br> - Melihat agenda terkini pada hari tersebut.
 <br> - Melihat daftar kelas beserta jadwalnya.
 <br> - Membuat jadwal belajar bersama serta mengedit isi dan keterangannya.
