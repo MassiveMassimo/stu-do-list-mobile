@@ -1,6 +1,7 @@
 import 'package:mobile/screens/drawer_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/screens/notes/providers/notes_provider.dart';
+import 'package:mobile/screens/notes/screens/notes_home.dart';
 import 'package:provider/provider.dart';
 import 'package:mobile/screens/notes/models/notes_model.dart';
 
@@ -40,7 +41,8 @@ class _FormNotesState extends State<FormNotes> {
       );
 
       Provider.of<NotesProvider>(context, listen: false).addNotes(notes);
-      Navigator.pop(context);
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const NotesHome()));
     }
   }
 

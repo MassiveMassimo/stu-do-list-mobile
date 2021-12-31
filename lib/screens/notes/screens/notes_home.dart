@@ -1,12 +1,54 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:mobile/screens/notes/models/notes_model.dart';
 import 'package:mobile/screens/notes/providers/notes_provider.dart';
+import 'package:mobile/screens/notes/widgets/search_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:mobile/screens/drawer_screen.dart';
 import 'package:mobile/screens/notes/screens/add_notes.dart';
 
-class NotesHome extends StatelessWidget {
+class NotesHome extends StatefulWidget {
   const NotesHome({Key? key}) : super(key: key);
+
+  @override
+  NotesHomeState createState() => NotesHomeState();
+}
+
+class NotesHomeState extends State<NotesHome> {
+  List<Notes> notes = [];
+  String query = '';
+  Timer? debouncer;
+
+  @override
+  void initState() {
+    super.initState();
+    init();
+  }
+
+  @override
+  void dispose() {
+    debouncer?.cancel();
+    super.dispose();
+  }
+
+  void debounce(
+      VoidCallback callback, {
+        Duration duration = const Duration(milliseconds: 1000),
+      }) {
+    if (debouncer != null) {
+      debouncer!.cancel();
+    }
+
+    debouncer = Timer(duration, callback);
+  }
+
+  Future init() async {
+    final notes = await NotesProvider.getNotes(query);
+
+    setState(() => this.notes = notes);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +60,7 @@ class NotesHome extends StatelessWidget {
                 style: TextStyle(color: Colors.grey.shade200)),
             backgroundColor: const Color(0xFF212529),
         ),
-        body: ListView(scrollDirection: Axis.vertical, children: [
+        body: ListView(scrollDirection: Axis.vertical, children: <Widget>[
           Card(
             child: Container(
               padding: const EdgeInsets.only(top: 20, left: 32, right: 32),
@@ -75,11 +117,13 @@ class NotesHome extends StatelessWidget {
                     bottomLeft: Radius.circular(40))),
             margin: const EdgeInsets.only(left: 0, right: 0, top: 0),
           ),
-          const SizedBox(height: 16),
-          ListView.builder(
+            buildSearch(),
+          Expanded(
+            child: ListView.builder(
               shrinkWrap: true,
-              itemCount: notesProvider.notes.length,
-              itemBuilder: (BuildContext context, int index) {
+              itemCount: notes.length,
+              itemBuilder: (context, index) {
+                final note = notes[index];
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -92,7 +136,7 @@ class NotesHome extends StatelessWidget {
                       child: Column(mainAxisSize: MainAxisSize.min, children: <
                           Widget>[
                         ListTile(
-                          title: Text(notesProvider.notes[index].matkul,
+                          title: Text(note.matkul,
                               style: const TextStyle(fontSize: 16)),
                           tileColor: Colors.grey.shade100,
                           contentPadding: const EdgeInsets.symmetric(
@@ -101,14 +145,14 @@ class NotesHome extends StatelessWidget {
                         Container(
                           padding: const EdgeInsets.only(top: 16.0, left: 16.0),
                           alignment: Alignment.centerLeft,
-                          child: Text(notesProvider.notes[index].topik,
+                          child: Text(note.topik,
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 14)),
                         ),
                         Container(
                           padding: const EdgeInsets.only(left: 16),
                           alignment: Alignment.centerLeft,
-                          child: Text('Penulis: '+notesProvider.notes[index].penulis,
+                          child: Text('Penulis: '+note.penulis,
                               style: const TextStyle(
                                   color: Colors.grey, fontSize: 12)),
                         ),
@@ -116,7 +160,7 @@ class NotesHome extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 8, left: 16),
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            notesProvider.notes[index].keterangan,
+                            note.keterangan,
                             style: const TextStyle(
                                 color: Colors.black,
                                 fontStyle: FontStyle.italic,
@@ -129,13 +173,13 @@ class NotesHome extends StatelessWidget {
                           alignment: Alignment.centerLeft,
                           child: InkWell(
                               child: Text(
-                                notesProvider.notes[index].link,
+                                note.link,
                                 textAlign: TextAlign.left,
                                 style: const TextStyle(
                                     color: Colors.blue, fontSize: 14),
                               ),
                               onTap: () =>
-                                  launch(notesProvider.notes[index].link)),
+                                  launch(note.link)),
                         ),
                         ButtonBar(
                           buttonPadding:
@@ -147,8 +191,10 @@ class NotesHome extends StatelessWidget {
                                   color: Colors.red, size: 30),
                               color: Colors.red.shade900,
                               onPressed: () {
-                                notesProvider.deleteNotes(
-                                    notesProvider.notes[index]);
+                                setState(() {
+                                  notesProvider.deleteNotes(note);
+                                  notes.removeAt(index);
+                                });
                               },
                             )
                           ],
@@ -164,6 +210,22 @@ class NotesHome extends StatelessWidget {
                   ],
                 );
               }),
-        ]));
+          )]));
   }
+  Widget buildSearch() => SearchWidget(
+    text: query,
+    hintText: 'Cari berdasarkan Mata Kuliah atau Nama Penulis',
+    onChanged: searchNotes,
+  );
+
+  Future searchNotes(String query) async => debounce(() async {
+    final notes = await NotesProvider.getNotes(query);
+
+    if (!mounted) return;
+
+    setState(() {
+      this.query = query;
+      this.notes = notes;
+    });
+  });
 }
