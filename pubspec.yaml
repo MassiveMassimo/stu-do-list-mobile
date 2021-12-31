@@ -80,6 +80,7 @@ flutter:
     - assets/images/JadwalHeader.gif
     - assets/images/BerhasilPage.gif
     - assets/images/stu-do-list.png
+    - assets/images/home_page.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
