@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -121,6 +120,7 @@ class AgendaMainState extends State<AgendaMain> {
             )),
 
         Card(
+          elevation: 6,
           margin: const EdgeInsets.all(20.0),
           clipBehavior: Clip.antiAlias,
           child: Column(
