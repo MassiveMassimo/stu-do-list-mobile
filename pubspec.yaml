@@ -77,7 +77,8 @@ flutter:
     - assets/
     - assets/images/video_playlist.gif
     - assets/images/lofi_studying.gif
-
+    - assets/images/JadwalHeader.gif
+    - assets/images/stu-do-list.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -91,15 +92,13 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Google Sans
+    - family: Poppins
       fonts:
-        - asset: fonts/GoogleSans-Regular.ttf
-        - asset: fonts/GoogleSans-Italic.ttf
-          style: italic
-        - asset: fonts/GoogleSans-Medium.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
           weight: 500
-        - asset: fonts/GoogleSans-Bold.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
           weight: 700
-  #
+        - asset: assets/fonts/Poppins-Regular.ttf
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
