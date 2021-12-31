@@ -7,7 +7,7 @@ import 'package:mobile/screens/video-playlist/video_playlist_home.dart';
 import 'package:mobile/screens/notes/notes_page.dart';
 import 'package:mobile/screens/schedule-kuliah/schedule_kuliah.dart';
 import 'package:mobile/screens/schedule-kuliah/screens/schedule_kuliah_table.dart';
-
+import 'package:mobile/screens/agenda/screens/agenda_home.dart';
 
 class DrawerScreen extends StatefulWidget {
   const DrawerScreen({Key? key}) : super(key: key);
@@ -32,7 +32,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
             'Stu-do-list',
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 18, fontWeight: FontWeight.w700, color: Color.fromARGB(255, 33, 37, 41)),
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                color: Color.fromARGB(255, 33, 37, 41)),
           ),
           const SizedBox(height: 20),
           DrawerListTile(
@@ -49,7 +51,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
           DrawerListTile(
             iconData: Icons.article,
             title: "Agenda",
-            onTilePressed: () {},
+            onTilePressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AgendaMain()),
+              );
+            },
           ),
           const SizedBox(height: 20),
           DrawerListTile(
@@ -69,7 +76,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
             onTilePressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const JadwalBelajarBarengHome()),
+                MaterialPageRoute(
+                    builder: (context) => const JadwalBelajarBarengHome()),
               );
             },
           ),
@@ -135,9 +143,9 @@ class DrawerListTile extends StatelessWidget {
   final VoidCallback onTilePressed;
   const DrawerListTile(
       {Key? key,
-        required this.iconData,
-        required this.title,
-        required this.onTilePressed})
+      required this.iconData,
+      required this.title,
+      required this.onTilePressed})
       : super(key: key);
 
   @override

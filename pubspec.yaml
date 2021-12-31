@@ -38,6 +38,7 @@ dependencies:
   http: ^0.13.4
   url_launcher: ^6.0.17
   shared_preferences: ^2.0.11
+  intl: ^0.15.7
 
 dev_dependencies:
   flutter_test:
@@ -78,7 +79,9 @@ flutter:
     - assets/images/video_playlist.gif
     - assets/images/lofi_studying.gif
     - assets/images/JadwalHeader.gif
+    - assets/images/BerhasilPage.gif
     - assets/images/stu-do-list.png
+    - assets/images/home_page.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
