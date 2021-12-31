@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'dart:convert';
 import 'package:mobile/screens/agenda/models/agenda_models.dart';
+import 'package:mobile/screens/agenda/screens/agenda_home.dart';
 import 'package:mobile/screens/drawer_screen.dart';
 
 class Matkul {
@@ -86,6 +87,7 @@ class AgendaFormState extends State<AgendaForm> {
       body: SingleChildScrollView(
         child: Center(
           child: Card(
+            elevation: 10,
             margin: const EdgeInsets.all(40.0),
             child: Form(
               key: _formKey,
@@ -93,7 +95,7 @@ class AgendaFormState extends State<AgendaForm> {
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: <Widget>[
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 40),
                     // Judul
                     const Text(
                       "Tambah Agenda",
@@ -108,7 +110,7 @@ class AgendaFormState extends State<AgendaForm> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           // Field Nama Mata Kuliah
-                          const SizedBox(height: 40),
+                          const SizedBox(height: 60),
                           Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 0),
@@ -341,7 +343,7 @@ class AgendaFormState extends State<AgendaForm> {
                             ),
                           ),
 
-                          const SizedBox(height: 30),
+                          const SizedBox(height: 60),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
@@ -380,7 +382,12 @@ class AgendaFormState extends State<AgendaForm> {
                                   if (_formKey.currentState!.validate()) {
                                     printHasil(context);
                                     submit(context);
-                                    Navigator.pop(context);
+                                    // Navigator.pop(context);
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => AgendaMain()),
+                                    );
                                   } else {
                                     print('belom lengkap\n');
                                   }

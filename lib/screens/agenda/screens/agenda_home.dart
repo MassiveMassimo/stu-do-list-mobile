@@ -5,8 +5,8 @@ import 'package:mobile/screens/agenda/screens/agenda_form.dart';
 import 'package:mobile/screens/agenda/models/agenda_models.dart';
 import 'package:mobile/screens/drawer_screen.dart';
 
-List<AgendaModel> agendas = [];
 fetchData() async {
+  List<AgendaModel> agendas = [];
   const url = 'https://stu-do-list.herokuapp.com/agenda/get';
   try {
     final response = await http.get(Uri.parse(url));
@@ -40,8 +40,10 @@ fetchData() async {
   }
 }
 
-// deleteAgenda(int index, int agenda_id) async {
-//   final url = 'https://stu-do-list.herokuapp.com/agenda/delete/$agenda_id';
+// deleteAgenda(AgendaModel agenda) async {
+//   List<AgendaModel> agendas = [];
+//   List<AgendaModel> agendas = fetchData();
+//   final url = 'https://stu-do-list.herokuapp.com/agenda/delete/${agenda.pk}';
 //   try {
 //     final response = await http.delete(Uri.parse(url));
 
@@ -61,6 +63,8 @@ class AgendaMain extends StatefulWidget {
 }
 
 class AgendaMainState extends State<AgendaMain> {
+  List<AgendaModel> agendas = [];
+
   @override
   void initState() {
     super.initState();
@@ -68,9 +72,11 @@ class AgendaMainState extends State<AgendaMain> {
   }
 
   Future init() async {
-    await fetchData();
+    final agenda = await fetchData();
 
-    setState(() {});
+    setState(() {
+      agendas = agenda;
+    });
   }
 
   @override
@@ -143,11 +149,12 @@ class AgendaMainState extends State<AgendaMain> {
         ListView.builder(
             shrinkWrap: true,
             itemCount: agendas.length,
-            itemBuilder: (context, index) {
+            itemBuilder: (BuildContext context, int index) {
               return Column(children: [
                 Card(
                   elevation: 6,
-                  margin: const EdgeInsets.all(20.0),
+                  margin: const EdgeInsets.symmetric(
+                      horizontal: 40.0, vertical: 10.0),
                   clipBehavior: Clip.antiAlias,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,7 +212,7 @@ class AgendaMainState extends State<AgendaMain> {
                                   Colors.white),
                             ),
                             onPressed: () {
-                              // deleteAgenda(index, agendas[index].pk!);
+                              // deleteAgenda(agendas[index]);
                             },
                           ),
                         ],
