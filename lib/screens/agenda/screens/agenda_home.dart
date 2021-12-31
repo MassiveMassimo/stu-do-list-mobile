@@ -5,14 +5,14 @@ import './agenda_form.dart';
 import '../models/agenda_models.dart';
 import 'package:mobile/screens/drawer_screen.dart';
 
+List<AgendaModel> agendas = [];
 fetchData() async {
-  List<AgendaModel> agendas = [];
   const url = 'https://stu-do-list.herokuapp.com/agenda/get';
   try {
     final response = await http.get(Uri.parse(url));
     final extractedData = jsonDecode(response.body);
-    print(extractedData);
-    print("");
+    // print(extractedData);
+    // print("");
     // return extractedData;
     // List<dynamic> extractedData = [];
 
@@ -29,8 +29,8 @@ fetchData() async {
       agendas.add(agendaModel);
     }
 
-    print(agendas);
-    print("");
+    // print(agendas);
+    // print("");
     return agendas;
 
     // Ketika ada error
@@ -40,8 +40,17 @@ fetchData() async {
   }
 }
 
-// deleteAgenda(int agenda_id) async {
+// deleteAgenda(int index, int agenda_id) async {
 //   final url = 'https://stu-do-list.herokuapp.com/agenda/delete/$agenda_id';
+//   try {
+//     final response = await http.delete(Uri.parse(url));
+
+//     agendas.removeAt(index);
+
+//   } catch (error) {
+//     print(error);
+//     return error;
+//   }
 // }
 
 class AgendaMain extends StatefulWidget {
@@ -52,6 +61,18 @@ class AgendaMain extends StatefulWidget {
 }
 
 class AgendaMainState extends State<AgendaMain> {
+  @override
+  void initState() {
+    super.initState();
+    init();
+  }
+
+  Future init() async {
+    await fetchData();
+
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,77 +140,81 @@ class AgendaMainState extends State<AgendaMain> {
               ],
             )),
 
-        Card(
-          elevation: 6,
-          margin: const EdgeInsets.all(20.0),
-          clipBehavior: Clip.antiAlias,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ListTile(
-                tileColor: Colors.grey.shade300,
-                title: const Text('PBP'),
-              ),
-              Padding(
-                  padding: const EdgeInsets.all(16.0),
+        ListView.builder(
+            shrinkWrap: true,
+            itemCount: agendas.length,
+            itemBuilder: (context, index) {
+              return Column(children: [
+                Card(
+                  elevation: 6,
+                  margin: const EdgeInsets.all(20.0),
+                  clipBehavior: Clip.antiAlias,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      // Nama Tugas
-                      Text(
-                        'Proyek UAS',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w600),
+                    children: [
+                      ListTile(
+                        tileColor: Colors.grey.shade300,
+                        title: Text((agendas[index].fields)!.matkul),
                       ),
+                      Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // Nama Tugas
+                              Text(
+                                agendas[index].fields!.judul,
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w600),
+                              ),
 
-                      // Tenggat Waktu
-                      SizedBox(height: 10),
-                      Text(
-                        '31/12/2021 - 23.59',
-                        style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w600),
-                      ),
+                              // Tenggat Waktu
+                              SizedBox(height: 10),
+                              Text(
+                                '${agendas[index].fields!.tanggal} - ${agendas[index].fields!.waktu}',
+                                style: TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.w600),
+                              ),
 
-                      // Keterangan tambahan
-                      SizedBox(height: 10),
-                      Text(
-                        'Keterangaaaaannnnnn panjaaaaaaaaaaaaaaaaanggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg',
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
+                              // Keterangan tambahan
+                              SizedBox(height: 10),
+                              Text(
+                                agendas[index].fields!.keterangan,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          )),
+                      ButtonBar(
+                        alignment: MainAxisAlignment.end,
+                        children: [
+                          ElevatedButton(
+                            child: const Text(
+                              'Hapus',
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all<Color>(Colors.red),
+                              foregroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.white),
+                            ),
+                            onPressed: () {
+                              // deleteAgenda(index, agendas[index].pk!);
+                            },
+                          ),
+                        ],
                       ),
                     ],
-                  )),
-              ButtonBar(
-                alignment: MainAxisAlignment.end,
-                children: [
-                  ElevatedButton(
-                    child: const Text(
-                      'Hapus',
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.red),
-                      foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.white),
-                    ),
-                    onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => const SecondRoute()),
-                      // );
-                    },
                   ),
-                ],
-              ),
-            ],
-          ),
-        ),
+                )
+              ]);
+            }),
       ])),
     );
   }

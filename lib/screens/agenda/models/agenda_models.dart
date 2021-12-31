@@ -38,20 +38,20 @@ class AgendaModel {
 class Fields {
   Fields({
     this.user,
-    @required this.matkul,
-    @required this.judul,
-    @required this.tanggal,
-    @required this.waktu,
-    @required this.keterangan,
+    required this.matkul,
+    required this.judul,
+    required this.tanggal,
+    required this.waktu,
+    required this.keterangan,
   });
 
   dynamic? user;
-  String? matkul;
-  String? judul;
+  String matkul;
+  String judul;
   // DateTime? tanggal;
-  String? tanggal;
-  String? waktu;
-  String? keterangan;
+  String tanggal;
+  String waktu;
+  String keterangan;
 
   factory Fields.fromJson(Map<String, dynamic> json) => Fields(
         user: json["user"],
