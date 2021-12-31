@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/screens/jadwal-belajar-bareng/models/jadwal_model.dart';
+import 'package:mobile/screens/jadwal-belajar-bareng/screens/page_edit.dart';
 import 'package:provider/provider.dart';
 import 'package:mobile/screens/jadwal-belajar-bareng/providers/jadwal_provider.dart';
-import 'package:mobile/screens/jadwal-belajar-bareng/screens/jadwal_home.dart';
 
 class FormEdit extends StatefulWidget {
   final JadwalBelajarModel jadwalbelajar;
@@ -52,7 +52,7 @@ class FormEditState extends State<FormEdit> {
       Provider.of<JadwalBelajarProvider>(context, listen: false).tambahJadwal(_jadwal);
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const JadwalBelajarBarengHome()),
+        MaterialPageRoute(builder: (context) => const EditDonePage()),
       );
     }
   }
