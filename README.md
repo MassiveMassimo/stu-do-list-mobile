@@ -52,7 +52,7 @@ Stu-Do-List kami ciptakan dengan harapan dapat membantu teman-teman yang mungkin
 </p>
 
 <h3>Jadwal Belajar Bareng</h3>
-<p>Fitur pada Stu-Do-List ini dapat digunakan untuk membuat jadwal belajar bersama yang dapat dilihat oleh para pengguna. Dengan fitur ini, pengguna dapat memasukkan informasi pertemuan, seperti tanggal dan waktu pertemuan, mata kuliah, topik pembicaraan, informasi tambahan, serta tempat pertemuan diadakan, misalnya link Zoom atau Google Meet. Pengguna dapat melihat, menghapus, dan mengedit jadwal-jadwal yang telah dimasukkan serta menghapus jadwal yang sudah berlalu. Jadwal-jadwal pertemuan yang telah diinput juga disusun dalam bentuk tabel berdasarkan skala prioritas yang diinput oleh user. </p>
+<p>Fitur pada Stu-Do-List ini dapat digunakan untuk membuat jadwal belajar bersama yang dapat dilihat oleh para pengguna. Dengan fitur ini, pengguna dapat memasukkan informasi pertemuan, seperti tanggal dan waktu pertemuan, mata kuliah, topik pembicaraan, informasi tambahan, serta tempat pertemuan diadakan, misalnya link Zoom atau Google Meet. Pengguna dapat melihat, menghapus, dan mengedit jadwal-jadwal yang telah dimasukkan serta menghapus jadwal yang sudah berlalu. </p>
 
 <h3>Ask a Mentor</h3>
 <p>Halaman ask a mentor menyediakan sebuah forum diskusi yang dibagi-bagi berdasarkan mata kuliah yang ada. Apabila pengguna memiliki pertanyaan seputar akademis, pengguna dapat memposting sebuah pertanyaan yang nantinya dapat di-reply oleh "mentor". Walaupun tidak secara eksplisit diberikan role mentor, setiap pengguna dapat membalas pertanyaan yang telah diajukan oleh pengguna lain guna membantu kesulitan atau sekadar berbagi pengetahuan.</p>

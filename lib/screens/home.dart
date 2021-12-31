@@ -26,10 +26,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: DrawerScreen(),
+      drawer: const DrawerScreen(),
       appBar: AppBar(
         title: Text("Stu-do-list"),
-        backgroundColor: Color(0xFF212529),
+        backgroundColor: const Color(0xFF212529),
       ),
       body: Center(
         child: Column(
