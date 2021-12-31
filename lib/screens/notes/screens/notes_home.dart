@@ -138,7 +138,7 @@ class NotesHomeState extends State<NotesHome> {
                         ListTile(
                           title: Text(note.matkul,
                               style: const TextStyle(fontSize: 18)),
-                          tileColor: Colors.grey.shade100,
+                          tileColor: Colors.grey.shade200,
                           contentPadding: const EdgeInsets.symmetric(
                               vertical: 0.0, horizontal: 16.0),
                         ),
