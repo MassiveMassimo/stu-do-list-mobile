@@ -1,31 +1,30 @@
 import 'package:flutter/material.dart';
 
-class BerhasilDitambah extends StatelessWidget {
-  const BerhasilDitambah({ Key? key }) : super(key: key);
+class Isi extends StatelessWidget {
+  const Isi({ Key? key }) : super(key: key);
   List<Widget> pageChildren(double width) {
     return <Widget>[
       SizedBox(
         width: width,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: const <Widget>[
             SizedBox(
               height: 30,
             ),
             Text(
-              "Jadwal berhasil ditambahkan!",
+              "stu-do-list",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 36,
+                fontSize: 40,
                 color: Colors.white,
               ),
             ),
-            SizedBox(height: 25),
+            SizedBox(height: 30),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
               child: Text(
-                "Klik tombol di bawah ini untuk kembali ke halaman Jadwal Belajar Bareng.",
+                "With Stu-Do-List, we hope you will find not only a study buddy but a life long friend.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontStyle: FontStyle.italic,
@@ -34,7 +33,6 @@ class BerhasilDitambah extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 25),
           ],
         ),
       ),

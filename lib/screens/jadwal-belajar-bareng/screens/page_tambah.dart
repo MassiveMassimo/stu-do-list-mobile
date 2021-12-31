@@ -36,7 +36,7 @@ class _TambahPage extends StatelessWidget {
             image: const AssetImage("assets/images/BerhasilPage.gif"),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-                Colors.purple.shade700.withOpacity(0.6), BlendMode.darken),
+                Colors.purple.shade900.withOpacity(0.6), BlendMode.darken),
           ),
           color: Colors.white,
         ),

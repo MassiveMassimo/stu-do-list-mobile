@@ -21,6 +21,7 @@ class EditBerhasilDitambah extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            SizedBox(height: 25),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
               child: Text(
@@ -33,6 +34,7 @@ class EditBerhasilDitambah extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 25),
           ],
         ),
       ),
