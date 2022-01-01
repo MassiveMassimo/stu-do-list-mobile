@@ -53,17 +53,19 @@ class _PostFormState extends State<PostForm> {
         title: Text("Add Post"),
         backgroundColor: Color(0xFF212529),
       ),
-      body: Column(
+      body: ListView(
         children: [
           const SizedBox(
             height: 50,
           ),
-          const Text(
-            "Tambah Pertanyaan",
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 30,
-                fontWeight: FontWeight.bold),
+          const Center(
+            child: Text(
+              "Tambah Pertanyaan",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold),
+            ),
           ),
           Container(
             margin: const EdgeInsets.all(24),
@@ -127,7 +129,7 @@ class _PostFormState extends State<PostForm> {
                   TextFormField(
                     controller: _time,
                     decoration: InputDecoration(
-                      hintText: "Silakan masukan pertanyaan Anda",
+                      hintText: "Silakan masukan waktu sekarang",
                       labelText: "Time",
                       border:
                           OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
