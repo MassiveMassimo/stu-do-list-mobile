@@ -45,7 +45,7 @@ Stu-Do-List kami ciptakan dengan harapan dapat membantu teman-teman yang mungkin
 
 ## 📃 Daftar Modul
 <h3>Landing Page</h3>
-<p> Halaman landing page stu-do-list menampilkan sedikit cerita dibalik aplikasi kami, deskripsi serta kegunaan dari website Stu-Do-List yang ditujukan untuk membantu para mahasiswa yang sedang melaksanakan perkuliahan secara daring.</p>
+<p> Halaman landing page stu-do-list menampilkan tagline dari Stu-Do-List yang ditujukan untuk membantu para mahasiswa yang sedang melaksanakan perkuliahan secara daring.</p>
 
 <h3>Agenda</h3>
 <p>Stu-Do-List menyediakan fitur agenda untuk mempermudah pengguna dalam mengingat tugas-tugas yang harus dikerjakan. Pada fitur ini, pengguna dapat mengakses to-do-list serta memasukkan input berupa hal-hal yang ingin dikerjakan pada hari tersebut. Selain itu, informasi-informasi mengenai jadwal kelas pengguna, link pertemuan kelas, dan deadline tugas juga tersedia pada halaman agenda. Hal ini tentunya memudahkan pengguna dalam menyusun rencana dan prioritasnya sebagai seorang mahasiswa serta menghindarkan pengguna dari kelupaan akan tugas atau kelas yang harus diikuti.
